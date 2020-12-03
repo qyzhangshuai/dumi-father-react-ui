@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { OrgTree } from 'dumi-react-ui';
-import { DataProps } from 'dumi-react-ui/lib/components/org-tree';
+import { OrgTree } from 'z-react-ui';
+import { DataProps } from 'z-react-ui/lib/org-tree';
 
 const horizontal = false; // true：横向  false：纵向
 const collapsable = false; // true：可折叠 false：不可折叠

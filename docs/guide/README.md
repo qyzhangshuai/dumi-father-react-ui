@@ -1,12 +1,12 @@
 ---
-title: '关于 dumi-react-ui'
+title: '关于 z-react-ui'
 nav:
   title: 开发指南
 ---
 
-# dumi-react-ui
+# z-react-ui
 
-`dumi-react-ui`，是一款基于 Dumi，由 React + TypeScript 开发的组件库 🎉。
+`z-react-ui`，是一款基于 Dumi，由 React + TypeScript 开发的组件库 🎉。
 
 ## ✨ 特性
 
@@ -19,4 +19,4 @@ nav:
 
 ## 作者 (qyzhangshuai)
 
-- [Github](https://github.com/qyzhangshuai/dumi-react-ui)
+- [Github](https://github.com/qyzhangshuai/dumi-father-react-ui)

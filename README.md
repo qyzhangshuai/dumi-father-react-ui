@@ -1,27 +1,35 @@
-# ui
+# z-react-ui
 
-## Getting Started
+- 采用[dumi](https://d.umijs.org/zh-CN)+[father](https://github.com/umijs/father)进行组件库的文档搭建以及打包
 
-Install dependencies,
+## 搭建过程
 
-```bash
-$ npm i
+```js
+$ npx @umijs/create-dumi-lib --site # 初始化一个站点模式的组件库开发脚手架
+# or
+$ yarn create @umijs/dumi-lib --site
 ```
 
-Start the dev server,
+额外需要安装的依赖
 
-```bash
-$ npm start
+```js
+yarn add antd classnames
+yarn add babel-plugin-import vfile-message @babel/runtime --dev
+yarn add @types/classnames @types/react @types/react-dom
 ```
 
-Build documentation,
+解释：
 
-```bash
-$ npm run docs:build
-```
+> antd: 我们引用 antd 做进一步封装
+>
+> babel-plugin-import：按需引入 antd，以及我们自己的组件库
+>
+> @babel/runtime： 根据 father 的要求，建议安装，看.fatherrc.js
+>
+> 以及安装各种声明
 
-Build library via `father-build`,
+接下来就是修改配置
 
-```bash
-$ npm run build
-```
+.umirc.ts 以及.fatherrc.js 中的配置，详见项目
+
+.

@@ -8,30 +8,20 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "baseUrl": "./",
-    "strict": true,
+    "strictNullChecks": false,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
     "paths": {
-      "dumi-react-ui/esm/*": [
-        "src/*"
-      ],
-      "dumi-react-ui/lib/*": [
-        "src/*"
-      ],
-      "dumi-react-ui": [
-        "src/index.ts"
-      ],
-      "@/*": [
-        "src/*"
-      ],
-      "@@/*": [
-        "src/.umi/*"
-      ]
+      "z-react-ui/esm/*": ["src/*"],
+      "z-react-ui/lib/*": ["src/*"],
+      "z-react-ui": ["src/index.ts"],
+      "@/*": ["src/*"],
+      "@@/*": ["src/.umi/*"]
     },
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src",
-    "typings.d.ts"
-  ],
+  "include": ["src", "typings.d.ts"],
   "exclude": [
     "node_modules",
     "lib",

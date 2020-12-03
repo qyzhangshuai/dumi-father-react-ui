@@ -1,0 +1,23 @@
+@st-prefix: 'zq';
+@emojicon-prefix: ~'@{st-prefix}-emoji-tab';
+
+.@{emojicon-prefix} {
+  position: relative;
+  display: inline-block;
+
+  &-emoji {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  &-emojo-text {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+.@{emojicon-prefix}-overlay {
+  .ant-popover-inner-content {
+    width: 600px;
+  }
+}

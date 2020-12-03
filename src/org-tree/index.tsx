@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import classnames from 'classnames';
 import TreeNode from './TreeNode';
-import { useForceUpdate } from '@/hooks';
+import { useForceUpdate } from '@/_hooks';
 // import './org_tree.less';
 
 //组件
