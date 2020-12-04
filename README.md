@@ -13,9 +13,10 @@ $ yarn create @umijs/dumi-lib --site
 额外需要安装的依赖
 
 ```js
-yarn add antd classnames
-yarn add babel-plugin-import vfile-message @babel/runtime --dev
+yarn add antd classnames @babel/runtime
+yarn add babel-plugin-import vfile-message rimraf klaw-sync --dev
 yarn add @types/classnames @types/react @types/react-dom
+
 ```
 
 解释：
@@ -31,5 +32,11 @@ yarn add @types/classnames @types/react @types/react-dom
 接下来就是修改配置
 
 .umirc.ts 以及.fatherrc.js 中的配置，详见项目
+
+待处理：
+
+1、发布 npm
+
+2、部署 github.io
 
 .

@@ -1,16 +1,22 @@
 export default {
   esm: 'babel',
   cjs: 'babel',
-  // umd:{
-  //   name:'dumi-react'
-  // },
+  // cjs: { type: 'babel', lazy: true },
+  umd: {
+    name: 'z-react-ui',
+    sourcemap: true,
+    globals: {
+      react: 'React',
+      antd: 'antd',
+    },
+  },
   lessInBabelMode: true,
   extractCSS: true,
   runtimeHelpers: true,
-  autoprefixer: {
-    browsers: [
-      'ie>8',
-      'Safari >= 6',
-    ],
-  },
+  // autoprefixer: {
+  //   browsers: [
+  //     'ie>8',
+  //     'Safari >= 6',
+  //   ],
+  // },
 };
