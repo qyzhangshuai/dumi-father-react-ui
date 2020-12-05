@@ -33,21 +33,15 @@ yarn add @types/classnames @types/react @types/react-dom
 
 .umirc.ts 以及.fatherrc.js 中的配置，详见项目
 
-待处理：
-
 1、发布 npm
 
 2、部署 github.io
 
-3、
+- 部署到 github.io 中,详见[dumi](https://d.umijs.org/zh-CN/guide/faq)的 FAQ
 
-```js
- "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xitengfei/xui-components.git"
-  },
-  "author": "tengfei.xi",
-  "license": "MIT",
-  "homepage": "https://github.com/xitengfei/xui-components#xui-components",
+- 部署后的地址：https://qyzhangshuai.github.io/dumi-father-react-ui
 
-```
+待处理问题：
+
+- 不支持主题配置
+- 打包后没有 less 文件，只有 css

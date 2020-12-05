@@ -8,7 +8,7 @@
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "npm run clean && father-build",
     "clean": "rimraf lib es dist",
-    "deploy": "npm run docs:build && npm run docs:deploy",
+    "deploy": "rimraf docs-dist && npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
@@ -21,9 +21,10 @@
     "lib",
     "es"
   ],
+  "homepage": "https://qyzhangshuai.github.io/dumi-father-react-ui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/qyzhangshuai/dumi-father-react-ui"
+    "url": "git+https://github.com/qyzhangshuai/dumi-father-react-ui.git"
   },
   "author": "zhangshuai",
   "gitHooks": {

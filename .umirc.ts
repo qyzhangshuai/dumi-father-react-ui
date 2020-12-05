@@ -5,6 +5,9 @@ export default defineConfig({
   title: 'z-react-ui',
   favicon: 'http://chuantu.xyz/t6/741/1606832294x1700340450.jpg',
   logo: 'http://chuantu.xyz/t6/741/1606832294x1700340450.jpg',
+  base: '/dumi-father-react-ui',
+  publicPath: '/dumi-father-react-ui/',
+  exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
   outputPath: 'docs-dist',
   mode: 'site',
   resolve: {
