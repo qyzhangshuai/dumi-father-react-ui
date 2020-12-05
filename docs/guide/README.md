@@ -52,7 +52,7 @@ import 'z-react-ui/lib/org-tree/style';
 ```js
 [
   'import',
-  { libraryName: 'z-react-ui', libraryDirectory: 'lib', style: 'css' },
+  { libraryName: 'z-react-ui', libraryDirectory: 'lib', style: true },
   'z-react-ui',
 ];
 ```
