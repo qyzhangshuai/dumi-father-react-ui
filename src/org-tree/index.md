@@ -11,4 +11,4 @@ nav:
 
 Demo:
 
-<code src="./demos/base.tsx" />
+<code src="./demos/Base.tsx" />

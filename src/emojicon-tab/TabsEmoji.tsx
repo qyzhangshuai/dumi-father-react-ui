@@ -15,7 +15,7 @@ type TabsEmojiProps = TabsProps & {
   emojiTabs?: number[] | string; // '0,1,2,3' [0,1,2,3] 两种形式
   emojiTextTabs?: string[]; // 如果中间有空项，则不更改名称
   emojiColumns?: EmojiconsArr[]; // 自定义表情
-  onEmojiChange?: (value: string) => void;
+  onEmojiChange?: (emoji: string) => void;
 };
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------

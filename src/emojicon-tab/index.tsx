@@ -14,11 +14,23 @@ export type EmojiconTabProps = TabsProps & {
   onEmojiChange?: (value: string) => void;
   visible?: boolean;
   onClose?: () => void;
-  btn?: React.ReactNode;
+  children?: React.ReactNode;
   emojiText?: React.ReactNode;
   emojiTextClassName?: string;
-  width?: number | string;
-  placement?: 'top' | 'bottom' | 'left' | 'right';
+  placement?:
+    | 'top'
+    | 'left'
+    | 'right'
+    | 'bottom'
+    | 'topLeft'
+    | 'topRight'
+    | 'bottomLeft'
+    | 'bottomRight'
+    | 'leftTop'
+    | 'leftBottom'
+    | 'rightTop'
+    | 'rightBottom';
+  overlayClassName?: string;
 };
 
 // #----------- 上: ts类型定义 ----------- 分割线 ----------- 下: JS代码 -----------
@@ -38,11 +50,11 @@ const EmojiconTab: React.FC<EmojiconTabProps> = ({
   onEmojiChange,
   visible: customVisible,
   onClose,
-  btn,
+  children,
   emojiText = defaultEmojicons,
   emojiTextClassName,
-  width = 350,
   placement = 'bottom',
+  overlayClassName,
   className,
   ...props
 }) => {
@@ -53,19 +65,21 @@ const EmojiconTab: React.FC<EmojiconTabProps> = ({
     setVisible(customVisible);
   }, [customVisible]);
 
-  const handleEmojiChange = useCallback(
-    emoji => {
-      setVisible(false);
-      onEmojiChange && onEmojiChange(emoji);
-    },
-    [onEmojiChange],
-  );
-
-  const handleClickBtn = useCallback(() => setVisible(true), []);
   const handleCancel = useCallback(() => {
     setVisible(false);
     onClose && onClose();
   }, [onClose]);
+
+  const handleEmojiChange = useCallback(
+    emoji => {
+      setVisible(false);
+      onEmojiChange && onEmojiChange(emoji);
+      handleCancel();
+    },
+    [onEmojiChange, handleCancel],
+  );
+
+  const handleClickBtn = useCallback(() => setVisible(true), []);
 
   useEffect(() => {
     if (!visible) {
@@ -73,12 +87,17 @@ const EmojiconTab: React.FC<EmojiconTabProps> = ({
     }
   }, [visible]);
 
+  const handleVisible = useCallback(visible => setVisible(visible), []);
+
   return (
     <div className={classNames(prefixCls, { [className]: !!className })}>
       <Popover
         placement={placement}
-        // overlayClassName={classNames('',{[overlayClassName]:!!overlayClassName})}
-        overlayClassName={classNames(`${prefixCls}-overlay`)}
+        visible={visible}
+        overlayClassName={classNames(`${prefixCls}-overlay`, {
+          [overlayClassName]: !!overlayClassName,
+        })}
+        onVisibleChange={handleVisible}
         content={
           <TabsEmoji
             defaultActiveKey={defaultActiveKey}
@@ -93,7 +112,7 @@ const EmojiconTab: React.FC<EmojiconTabProps> = ({
         }
         trigger="click"
       >
-        {btn || (
+        {children || (
           <div
             className={classNames(`${prefixCls}-emojo-text`, {
               [emojiTextClassName]: !!emojiTextClassName,

@@ -12,6 +12,7 @@
     "allowJs": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,
+    "declaration": true,
     "paths": {
       "z-react-ui/esm/*": ["src/*"],
       "z-react-ui/lib/*": ["src/*"],

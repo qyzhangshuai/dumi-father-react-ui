@@ -13,7 +13,7 @@ $ yarn create @umijs/dumi-lib --site
 额外需要安装的依赖
 
 ```js
-yarn add antd classnames @babel/runtime
+yarn add antd classnames @babel/runtime @ant-design/icons
 yarn add babel-plugin-import vfile-message rimraf klaw-sync --dev
 yarn add @types/classnames @types/react @types/react-dom
 
@@ -39,4 +39,15 @@ yarn add @types/classnames @types/react @types/react-dom
 
 2、部署 github.io
 
-.
+3、
+
+```js
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xitengfei/xui-components.git"
+  },
+  "author": "tengfei.xi",
+  "license": "MIT",
+  "homepage": "https://github.com/xitengfei/xui-components#xui-components",
+
+```

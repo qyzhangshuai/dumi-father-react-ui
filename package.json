@@ -6,7 +6,7 @@
     "start": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
-    "build": "npm run clean && father-build && node ./scripts/moveDeclare.js",
+    "build": "npm run clean && father-build",
     "clean": "rimraf lib es dist",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
@@ -18,10 +18,14 @@
   "module": "es/index.esm.js",
   "typings": "lib/index.d.ts",
   "files": [
-    "dist",
     "lib",
     "es"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qyzhangshuai/dumi-father-react-ui"
+  },
+  "author": "zhangshuai",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -34,6 +38,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "@babel/runtime": "^7.12.5",
     "antd": "^4.9.1",
     "classnames": "^2.2.6",
