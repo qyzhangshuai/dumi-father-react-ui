@@ -7,9 +7,10 @@
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "npm run clean && father-build && gulp",
-    "clean": "rimraf lib es dist",
     "deploy": "rimraf docs-dist && npm run docs:build && npm run docs:deploy",
-    "release": "npm run build && npm publish",
+    "release": "node ./scripts/release.js",
+    "all": "npm run deploy & npm run release",
+    "clean": "rimraf lib es dist",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
@@ -74,6 +75,8 @@
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
+    "semver": "^7.3.4",
+    "ts-node": "^9.1.0",
     "vfile-message": "^2.0.4",
     "yorkie": "^2.0.0"
   },

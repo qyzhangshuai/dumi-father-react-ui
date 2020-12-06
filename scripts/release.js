@@ -1,25 +1,24 @@
 /* eslint-disable  import/no-extraneous-dependencies,@typescript-eslint/camelcase, no-console */
-import inquirer from 'inquirer';
-import fs from 'fs';
-import path from 'path';
-import child_process from 'child_process';
-import util from 'util';
-import chalk from 'chalk';
-import semverInc from 'semver/functions/inc';
-import { ReleaseType } from 'semver';
+const inquirer = require('inquirer');
+const fs = require('fs');
+const path = require('path');
+const child_process = require('child_process');
+const util = require('util');
+const chalk = require('chalk');
+const semverInc = require('semver/functions/inc');
 
-import pkg from '../package.json';
+const pkg = require('../package.json');
 
 const exec = util.promisify(child_process.exec);
 
-const run = async (command: string) => {
+const run = async command => {
   console.log(chalk.green(command));
   await exec(command);
 };
 
 const currentVersion = pkg.version;
 
-const getNextVersions = (): { [key in ReleaseType]: string | null } => ({
+const getNextVersions = () => ({
   major: semverInc(currentVersion, 'major'),
   minor: semverInc(currentVersion, 'minor'),
   patch: semverInc(currentVersion, 'patch'),
@@ -29,7 +28,7 @@ const getNextVersions = (): { [key in ReleaseType]: string | null } => ({
   prerelease: semverInc(currentVersion, 'prerelease'),
 });
 
-const timeLog = (logInfo: string, type: 'start' | 'end') => {
+const timeLog = (logInfo, type) => {
   let info = '';
   if (type === 'start') {
     info = `=> 开始任务：${logInfo}`;
@@ -49,14 +48,14 @@ const timeLog = (logInfo: string, type: 'start' | 'end') => {
 /**
  * 获取下一次版本号
  */
-async function prompt(): Promise<string> {
+async function prompt() {
   const nextVersions = getNextVersions();
   const { nextVersion } = await inquirer.prompt([
     {
       type: 'list',
       name: 'nextVersion',
       message: `请选择将要发布的版本 (当前版本 ${currentVersion})`,
-      choices: (Object.keys(nextVersions) as Array<ReleaseType>).map(level => ({
+      choices: Object.keys(nextVersions).map(level => ({
         name: `${level} => ${nextVersions[level]}`,
         value: nextVersions[level],
       })),
@@ -69,7 +68,7 @@ async function prompt(): Promise<string> {
  * 更新版本号
  * @param nextVersion 新版本号
  */
-async function updateVersion(nextVersion: string) {
+async function updateVersion(nextVersion) {
   pkg.version = nextVersion;
   timeLog('修改package.json版本号', 'start');
   await fs.writeFileSync(
@@ -80,18 +79,12 @@ async function updateVersion(nextVersion: string) {
   timeLog('修改package.json版本号', 'end');
 }
 
-// async function generateChangelog() {
-//   timeLog('生成CHANGELOG.md', 'start');
-//   await run(' npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0');
-//   timeLog('生成CHANGELOG.md', 'end');
-// }
-
 /**
  * 将代码提交至git
  */
-async function push(nextVersion: string) {
+async function push(nextVersion) {
   timeLog('推送代码至git仓库', 'start');
-  await run('git add package.json CHANGELOG.md');
+  await run('git add package.json');
   await run(`git commit -m "v${nextVersion}" -n`);
   await run('git push');
   timeLog('推送代码至git仓库', 'end');
@@ -118,7 +111,7 @@ async function publish() {
 /**
  * 打tag提交至git
  */
-async function tag(nextVersion: string) {
+async function tag(nextVersion) {
   timeLog('打tag并推送至git', 'start');
   await run(`git tag v${nextVersion}`);
   await run(`git push origin tag v${nextVersion}`);
@@ -131,16 +124,14 @@ async function main() {
     const startTime = Date.now();
     // =================== 更新版本号 ===================
     await updateVersion(nextVersion);
-    // =================== 更新changelog ===================
-    await generateChangelog();
-    // =================== 代码推送git仓库 ===================
-    await push(nextVersion);
-    // =================== 组件库打包 ===================
-    await build();
-    // =================== 发布至npm ===================
-    await publish();
-    // =================== 打tag并推送至git ===================
-    await tag(nextVersion);
+    // // =================== 代码推送git仓库 ===================
+    // await push(nextVersion);
+    // // =================== 组件库打包 ===================
+    // await build();
+    // // =================== 发布至npm ===================
+    // await publish();
+    // // =================== 打tag并推送至git ===================
+    // await tag(nextVersion);
     console.log(
       `✨ 发布流程结束 共耗时${((Date.now() - startTime) / 1000).toFixed(3)}s`,
     );

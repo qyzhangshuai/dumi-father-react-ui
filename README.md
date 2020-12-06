@@ -14,8 +14,11 @@ $ yarn create @umijs/dumi-lib --site
 
 ```js
 yarn add antd classnames @babel/runtime @ant-design/icons
-yarn add babel-plugin-import vfile-message rimraf klaw-sync --dev
+yarn add babel-plugin-import vfile-message rimraf klaw-sync inquirer ts-node semver --dev
 yarn add @types/classnames @types/react @types/react-dom
+
+// klaw-sync 这个暂时没有用到
+// less-vars-to-js 暂时没有用到
 
 ```
 
@@ -52,3 +55,5 @@ gulp-less不需要额外安装，因为搭建项目中自己带有
 - 部署到 github.io 中,详见[dumi](https://d.umijs.org/zh-CN/guide/faq)的 FAQ
 
 - 部署后的地址：https://qyzhangshuai.github.io/dumi-father-react-ui
+
+declare module 'inquirer'
