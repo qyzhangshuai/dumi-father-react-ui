@@ -1,57 +1,61 @@
+
 # z-react-ui
 
-- 采用[dumi](https://d.umijs.org/zh-CN)+[father](https://github.com/umijs/father)进行组件库的文档搭建以及打包
+`z-react-ui`，是一款基于 Dumi，由 React + TypeScript 开发的组件库 🎉。
 
-## 搭建过程
+## ✨ 特性
 
-```js
-$ npx @umijs/create-dumi-lib --site # 初始化一个站点模式的组件库开发脚手架
-# or
-$ yarn create @umijs/dumi-lib --site
-```
+- 🌈 提炼组件库设计良好的视觉风格
+- 📦 渐进式探索高质量的前端代码的实现
+- 🛡 使用 TypeScript 开发，提升开发体验
+- ✅ 组件内部使用 antd 风格，以及 antd 内部颜色
+- 📖 提供开发过程的文档思路，助力你学习组件开发
+- 🔖 该项目会长期维护，并不断探索最佳实践
 
-额外需要安装的依赖
+## 安装
 
-```js
-yarn add antd classnames @babel/runtime @ant-design/icons
-yarn add babel-plugin-import vfile-message rimraf klaw-sync inquirer ts-node semver --dev
-yarn add @types/classnames @types/react @types/react-dom
+### 使用 npm 或 yarn 安装
 
-// klaw-sync 这个暂时没有用到
-// less-vars-to-js 暂时没有用到
-
-```
-
-解释：
-
-> antd: 我们引用 antd 做进一步封装
->
-> babel-plugin-import：按需引入 antd，以及我们自己的组件库
->
-> @babel/runtime： 根据 father 的要求，建议安装，看.fatherrc.js
->
-> 以及安装各种声明
-
-接下来就是修改配置
-
-.umirc.ts 以及.fatherrc.js 中的配置，详见项目
-
-## 搭建过程遇到问题
-
-1、使用 father-build 搭建，发现 less 编译成 css 时，less 文件没有保留，所以使用 gulp 进行 less 的编译
-
-详见项目中的 gulpfile.ts
+**我们推荐使用 npm 或 yarn 的方式进行开发**，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
 
 ```js
-yarn add gulp gulp-autoprefixer --dev
-gulp-less不需要额外安装，因为搭建项目中自己带有
-如果想要压缩css，可以使用gulp-cssnano
+npm install z-react-ui --save
 ```
 
-1、发布 npm
+```js
+yarn add z-react-ui
+```
 
-2、部署 github.io
+### 按需加载
 
-- 部署到 github.io 中,详见[dumi](https://d.umijs.org/zh-CN/guide/faq)的 FAQ
+`z-react-ui`默认支持基于 ES modules 的 tree shaking，对于 js 部分，直接引入 `import { OrgTree } from 'z-react-ui'` 就会有按需加载的效果。
 
-- 部署后的地址：https://qyzhangshuai.github.io/dumi-father-react-ui
+### 示例
+
+```js
+import { OrgTree } from 'z-react-ui';
+```
+
+手动引入样式
+
+```js
+import 'z-react-ui/lib/org-tree/style';
+```
+
+使用[babel-plugin-import](https://github.com/ant-design/babel-plugin-import)帮助我们引入样式
+
+```js
+[
+  'import',
+  { libraryName: 'z-react-ui', libraryDirectory: 'lib', style: true },
+  'z-react-ui',
+];
+```
+
+### TypeScript[#](https://ant.design/docs/react/introduce-cn#TypeScript)
+
+`z-react-ui`使用 TypeScript 进行书写并提供了完整的定义文件。
+
+## 作者 (qyzhangshuai)
+
+- [Github](https://github.com/qyzhangshuai/dumi-father-react-ui)

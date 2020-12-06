@@ -8,6 +8,7 @@ nav:
 
 `z-react-ui`，是一款基于 Dumi，由 React + TypeScript 开发的组件库 🎉。
 
+[组件库预览地址](https://qyzhangshuai.github.io/dumi-father-react-ui)
 ## ✨ 特性
 
 - 🌈 提炼组件库设计良好的视觉风格

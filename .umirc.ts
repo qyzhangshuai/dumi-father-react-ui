@@ -3,8 +3,8 @@ import { join } from 'path';
 
 export default defineConfig({
   title: 'z-react-ui',
-  favicon: 'http://chuantu.xyz/t6/741/1606832294x1700340450.jpg',
-  logo: 'http://chuantu.xyz/t6/741/1606832294x1700340450.jpg',
+  favicon: 'http://m.qpic.cn/psc?/V13sL17e2IskgF/ruAMsa53pVQWN7FLK88i5panvpKM.uKn2D6a3PfJMjCKBgHJtiIq.zj.7d2hdbLGfaAxjUP2yNouZ2AR4uC6bRjy368JEQ4sFaLwqIB2g4k!/b&bo=9AHtAQAAAAABBzk!&rf=viewer_4',
+  logo: 'http://m.qpic.cn/psc?/V13sL17e2IskgF/ruAMsa53pVQWN7FLK88i5panvpKM.uKn2D6a3PfJMjCKBgHJtiIq.zj.7d2hdbLGfaAxjUP2yNouZ2AR4uC6bRjy368JEQ4sFaLwqIB2g4k!/b&bo=9AHtAQAAAAABBzk!&rf=viewer_4',
   base: '/dumi-father-react-ui',
   publicPath: '/dumi-father-react-ui/',
   exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
