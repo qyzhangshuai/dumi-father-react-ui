@@ -13,4 +13,14 @@ export default {
   // lessInBabelMode: true,
   // extractCSS: true,
   runtimeHelpers: true,
+  extraBabelPlugins: [
+    [
+      'babel-plugin-import',
+      {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: true,
+      },
+    ],
+  ],
 };
