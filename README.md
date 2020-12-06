@@ -45,3 +45,4 @@ yarn add @types/classnames @types/react @types/react-dom
 
 - 不支持主题配置
 - 打包后没有 less 文件，只有 css
+- css 没有前缀
