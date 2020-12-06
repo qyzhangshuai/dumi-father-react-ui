@@ -6,12 +6,12 @@ const horizontal = false; // true：横向  false：纵向
 const collapsable = false; // true：可折叠 false：不可折叠
 const expandAll = true; // true: 全部展开 false：全部折叠
 
-interface DemoProps {
+interface BaseProps {
   // 自己添加
 }
 
-const Demo: React.FC<DemoProps> = ({}) => {
-  const [value, setValue] = useState();
+const Base: React.FC<BaseProps> = ({}) => {
+  const [value, setValue] = useState<string | number>(0);
 
   const data: DataProps = {
     id: 0,
@@ -41,8 +41,11 @@ const Demo: React.FC<DemoProps> = ({}) => {
     ],
   };
 
-  const handleClick = (_e: any, data: any) => {
-    console.log('data', data);
+  const handleClick = (
+    _e: React.MouseEventHandler<HTMLElement>,
+    data: DataProps,
+  ) => {
+    setValue(data.id);
   };
 
   return (
@@ -53,8 +56,9 @@ const Demo: React.FC<DemoProps> = ({}) => {
       collapsable={collapsable}
       expandAll={expandAll}
       onClick={handleClick}
+      onConditionClick={handleClick}
     />
   );
 };
 
-export default Demo;
+export default Base;

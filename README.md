@@ -33,6 +33,18 @@ yarn add @types/classnames @types/react @types/react-dom
 
 .umirc.ts 以及.fatherrc.js 中的配置，详见项目
 
+## 搭建过程遇到问题
+
+1、使用 father-build 搭建，发现 less 编译成 css 时，less 文件没有保留，所以使用 gulp 进行 less 的编译
+
+详见项目中的 gulpfile.ts
+
+```js
+yarn add gulp gulp-autoprefixer --dev
+gulp-less不需要额外安装，因为搭建项目中自己带有
+如果想要压缩css，可以使用gulp-cssnano
+```
+
 1、发布 npm
 
 2、部署 github.io
@@ -40,9 +52,3 @@ yarn add @types/classnames @types/react @types/react-dom
 - 部署到 github.io 中,详见[dumi](https://d.umijs.org/zh-CN/guide/faq)的 FAQ
 
 - 部署后的地址：https://qyzhangshuai.github.io/dumi-father-react-ui
-
-待处理问题：
-
-- 不支持主题配置
-- 打包后没有 less 文件，只有 css
-- css 没有前缀

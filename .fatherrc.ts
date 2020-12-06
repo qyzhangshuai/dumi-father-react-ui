@@ -10,7 +10,7 @@ export default {
   //     antd: 'antd',
   //   },
   // },
-  lessInBabelMode: true,
-  extractCSS: true,
+  // lessInBabelMode: true,
+  // extractCSS: true,
   runtimeHelpers: true,
 };

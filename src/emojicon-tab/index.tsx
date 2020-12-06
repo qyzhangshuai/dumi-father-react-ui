@@ -2,9 +2,9 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Popover } from 'antd';
 import { TabsProps } from 'rc-tabs/lib/Tabs';
 import classNames from 'classnames';
+import { usePrefixCls } from '@/_hooks';
 import { emojicons } from './defaultEmojicons';
 import TabsEmoji from './TabsEmoji';
-import { defaultPrefixCls } from '@/_utils/config';
 import { EmojiconsArr } from './defaultEmojicons';
 
 export type EmojiconTabProps = TabsProps & {
@@ -59,7 +59,7 @@ const EmojiconTab: React.FC<EmojiconTabProps> = ({
   ...props
 }) => {
   const [visible, setVisible] = useState(false);
-  const prefixCls = useMemo(() => `${defaultPrefixCls}-emoji-tab`, []);
+  const prefixCls = usePrefixCls('emoji-tab');
 
   useEffect(() => {
     setVisible(customVisible);

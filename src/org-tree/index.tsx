@@ -2,7 +2,6 @@ import React, { useEffect, useMemo } from 'react';
 import classnames from 'classnames';
 import TreeNode from './TreeNode';
 import { useForceUpdate } from '@/_hooks';
-// import './org_tree.less';
 
 //组件
 const defaultNode = {
@@ -36,12 +35,12 @@ export interface OrgTreeProps {
   node?: NodeProps;
   labelClassName?: string;
   conditionClassName?: string;
-  onClick?: (e: React.MouseEventHandler<HTMLElement>, data: any) => void;
+  onClick?: (e: React.MouseEventHandler<HTMLElement>, data: DataProps) => void;
   onConditionClick?: (
     e: React.MouseEventHandler<HTMLElement>,
-    data: any,
+    data: DataProps,
   ) => void;
-  renderContent?: (data: any) => void;
+  renderContent?: (data: DataProps) => void;
 }
 
 const OrgTree: React.FC<OrgTreeProps> = props => {
@@ -54,7 +53,7 @@ const OrgTree: React.FC<OrgTreeProps> = props => {
     data,
     onClick,
     onConditionClick,
-    renderContent = (data: any) => data.label,
+    renderContent = (data: DataProps) => data.label,
     ...restProps
   } = useMemo(() => props, [props]);
 
@@ -62,7 +61,10 @@ const OrgTree: React.FC<OrgTreeProps> = props => {
     if (expandAll) toggleExpand(data, true);
   }, []);
 
-  const handleExpand = (_e: any, nodeData: any) => {
+  const handleExpand = (
+    _e: React.MouseEventHandler<HTMLElement>,
+    nodeData: DataProps,
+  ) => {
     if ('expand' in nodeData) {
       nodeData.expand = !nodeData.expand;
       if (!nodeData.expand && nodeData.children) {
@@ -75,8 +77,8 @@ const OrgTree: React.FC<OrgTreeProps> = props => {
     }
   };
 
-  const collapse = (list: any) => {
-    list.forEach((child: any) => {
+  const collapse = (list: DataProps[]) => {
+    list.forEach((child: DataProps) => {
       if (child.expand) {
         child.expand = false;
       }
@@ -84,7 +86,7 @@ const OrgTree: React.FC<OrgTreeProps> = props => {
     });
   };
 
-  const toggleExpand = (data: any, val: any) => {
+  const toggleExpand = (data: DataProps, val: boolean) => {
     if (Array.isArray(data)) {
       data.forEach(item => {
         item.expand = val;
@@ -108,11 +110,18 @@ const OrgTree: React.FC<OrgTreeProps> = props => {
           data={data}
           activeId={activeId}
           node={{ ...defaultNode, ...node }}
-          onExpand={(e: any, nodeData: any) => handleExpand(e, nodeData)}
-          onClick={(e: any, nodeData: any) => onClick && onClick(e, nodeData)}
-          onConditionClick={(e: any, nodeData: any) =>
-            onConditionClick && onConditionClick(e, nodeData)
-          }
+          onExpand={(
+            e: React.MouseEventHandler<HTMLElement>,
+            nodeData: DataProps,
+          ) => handleExpand(e, nodeData)}
+          onClick={(
+            e: React.MouseEventHandler<HTMLElement>,
+            nodeData: DataProps,
+          ) => onClick && onClick(e, nodeData)}
+          onConditionClick={(
+            e: React.MouseEventHandler<HTMLElement>,
+            nodeData: DataProps,
+          ) => onConditionClick && onConditionClick(e, nodeData)}
           renderContent={renderContent}
           {...restProps}
         />

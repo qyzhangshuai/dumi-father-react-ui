@@ -1,3 +1,9 @@
 declare module '*.css';
 declare module '*.less';
-declare module 'z-react-ui';
+declare module '*.json';
+declare module '*.jpg';
+declare module '*.jpge';
+declare module '*.png';
+declare module '*.gif';
+declare module '*.svg';
+declare module '*.bmp';
