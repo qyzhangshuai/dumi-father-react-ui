@@ -32,12 +32,6 @@
     "lib",
     "es"
   ],
-  "sideEffects": [
-    "dist/*",
-    "es/**/style/*",
-    "lib/**/style/*",
-    "*.less"
-  ],
   "browserslist": [
     "last 2 versions",
     "Firefox ESR",

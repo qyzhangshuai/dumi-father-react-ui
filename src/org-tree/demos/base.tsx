@@ -15,28 +15,28 @@ const Base: React.FC<BaseProps> = ({}) => {
 
   const data: DataProps = {
     id: 0,
-    label: '一级',
+    label: '一级内容',
     children: [
       {
         id: 1,
-        label: <div>二级内容1</div>,
-        conditionList: '条件项',
+        label: <div>二级内容-1</div>,
+        conditionList: '二级内容-条件项',
         children: [
           {
             id: 4,
-            label: '三级内容1',
-            conditionList: '年后111',
+            label: '三级内容-1-1',
+            conditionList: '三级内容-条件项',
           },
           {
             id: 5,
-            label: '三级内容2',
+            label: '三级内容-1-2',
           },
         ],
       },
       {
         id: 2,
-        label: <div>二级内容1</div>,
-        children: [{ id: 44, label: 'demo' }],
+        label: <div>二级内容-2</div>,
+        children: [{ id: 44, label: '三级内容-2-1' }],
       },
     ],
   };
