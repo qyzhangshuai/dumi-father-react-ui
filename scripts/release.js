@@ -75,7 +75,7 @@ async function updateVersion(nextVersion) {
     path.resolve(__dirname, './../package.json'),
     JSON.stringify(pkg),
   );
-  await run('npx prettier package.json --write');
+  await run('npx prettier package.json');
   timeLog('修改package.json版本号', 'end');
 }
 
