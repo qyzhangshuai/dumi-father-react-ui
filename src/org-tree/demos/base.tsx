@@ -8,12 +8,13 @@ const expandAll = true; // true: 全部展开 false：全部折叠
 
 interface BaseProps {
   // 自己添加
+  [props: string]: any;
 }
 
 const Base: React.FC<BaseProps> = ({}) => {
   const [value, setValue] = useState<string | number>(0);
 
-  const data: DataProps = {
+  const dataSource: DataProps = {
     id: 0,
     label: '一级内容',
     children: [
@@ -50,7 +51,7 @@ const Base: React.FC<BaseProps> = ({}) => {
 
   return (
     <OrgTree
-      data={data}
+      data={dataSource}
       activeId={value}
       horizontal={horizontal}
       collapsable={collapsable}
