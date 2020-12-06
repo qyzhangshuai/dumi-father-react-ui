@@ -84,7 +84,7 @@ async function updateVersion(nextVersion) {
  */
 async function push(nextVersion) {
   timeLog('推送代码至git仓库', 'start');
-  await run('git add package.json');
+  await run('git add .');
   await run(`git commit -m "v${nextVersion}" -n`);
   await run('git push');
   timeLog('推送代码至git仓库', 'end');
@@ -124,14 +124,14 @@ async function main() {
     const startTime = Date.now();
     // =================== 更新版本号 ===================
     await updateVersion(nextVersion);
-    // // =================== 代码推送git仓库 ===================
-    // await push(nextVersion);
-    // // =================== 组件库打包 ===================
-    // await build();
-    // // =================== 发布至npm ===================
-    // await publish();
-    // // =================== 打tag并推送至git ===================
-    // await tag(nextVersion);
+    // =================== 代码推送git仓库 ===================
+    await push(nextVersion);
+    // =================== 组件库打包 ===================
+    await build();
+    // =================== 发布至npm ===================
+    await publish();
+    // =================== 打tag并推送至git ===================
+    await tag(nextVersion);
     console.log(
       `✨ 发布流程结束 共耗时${((Date.now() - startTime) / 1000).toFixed(3)}s`,
     );
