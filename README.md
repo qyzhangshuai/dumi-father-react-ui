@@ -55,5 +55,3 @@ gulp-less不需要额外安装，因为搭建项目中自己带有
 - 部署到 github.io 中,详见[dumi](https://d.umijs.org/zh-CN/guide/faq)的 FAQ
 
 - 部署后的地址：https://qyzhangshuai.github.io/dumi-father-react-ui
-
-declare module 'inquirer'
