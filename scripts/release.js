@@ -86,7 +86,7 @@ async function updateVersion(nextVersion) {
 async function push(nextVersion) {
   timeLog('推送代码至git仓库', 'start');
   await run('git add .');
-  await run(`git commit -m "v${nextVersion}" -n`);
+  await run(`git commit -m "v${nextVersion}"`);
   await run('git push');
   timeLog('推送代码至git仓库', 'end');
 }
