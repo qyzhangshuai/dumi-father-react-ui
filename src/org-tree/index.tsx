@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import classnames from 'classnames';
 import TreeNode from './TreeNode';
-import { useForceUpdate } from '@/_hooks';
+import { useForceUpdate } from '../_hooks';
 
 //组件
 const defaultNode = {

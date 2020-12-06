@@ -8,7 +8,7 @@
 import React, { useMemo } from 'react';
 import { Tabs } from 'antd';
 import { TabsProps } from 'rc-tabs/lib/Tabs';
-import { defaultPrefixCls } from '@/_utils/config';
+import { defaultPrefixCls } from '../_utils/config';
 import emojiconsArr, { EmojiconsArr } from './defaultEmojicons';
 
 type TabsEmojiProps = TabsProps & {

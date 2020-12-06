@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Popover } from 'antd';
 import { TabsProps } from 'rc-tabs/lib/Tabs';
 import classNames from 'classnames';
-import { usePrefixCls } from '@/_hooks';
+import { usePrefixCls } from '../_hooks';
 import { emojicons } from './defaultEmojicons';
 import TabsEmoji from './TabsEmoji';
 import { EmojiconsArr } from './defaultEmojicons';

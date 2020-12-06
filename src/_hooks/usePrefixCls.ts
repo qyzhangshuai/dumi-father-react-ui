@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { defaultPrefixCls } from '@/_utils/config';
+import { defaultPrefixCls } from '../_utils/config';
 
 export default function usePrefixCls(backClassName: string) {
   return useMemo(
