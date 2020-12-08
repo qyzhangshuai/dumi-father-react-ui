@@ -22,7 +22,6 @@ const getNextVersions = () => ({
   major: semverInc(currentVersion, 'major'),
   minor: semverInc(currentVersion, 'minor'),
   patch: semverInc(currentVersion, 'patch'),
-  current: currentVersion,
   premajor: semverInc(currentVersion, 'premajor'),
   preminor: semverInc(currentVersion, 'preminor'),
   prepatch: semverInc(currentVersion, 'prepatch'),
