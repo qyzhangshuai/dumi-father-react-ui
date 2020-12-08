@@ -2,7 +2,7 @@
 .org-tree-container {
   display: inline-block;
   padding: 15px;
-  background-color: #fff;
+  background-color: @white;
 }
 
 .org-tree {
@@ -53,15 +53,15 @@
   z-index: 10;
   margin-left: -10px;
   margin-top: 9px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: @white;
+  border: 1px solid @gray;
   border-radius: 50%;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: all 0.35s ease;
 
   &:hover {
-    background-color: #e7e8e9;
+    background-color: @gray-hover;
     transform: scale(1.15);
   }
 
@@ -76,7 +76,7 @@
     left: 4px;
     right: 4px;
     height: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid @gray;
   }
 
   &:after {
@@ -84,7 +84,7 @@
     left: 50%;
     bottom: 4px;
     width: 0;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid @gray;
   }
 
   &.expanded:after {
@@ -114,12 +114,12 @@
 
   &:after {
     left: 50%;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid @gray-1;
   }
 
   &:not(:first-child):before,
   &:not(:last-child):after {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid @gray-1;
   }
 }
 .collapsable .org-tree-node.collapsed {
@@ -132,7 +132,7 @@
     left: 0;
     width: 50%;
     height: 20px;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid @gray-1;
   }
 }
 .org-tree > .org-tree-node {
@@ -153,7 +153,7 @@
     left: 50%;
     width: 0;
     height: 20px;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid @gray-1;
   }
 
   &:after {
@@ -190,17 +190,17 @@
 
     &:only-child:before {
       top: 1px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid @gray-1;
     }
 
     &:not(:first-child):before,
     &:not(:last-child):after {
       border-top: 0;
-      border-left: 1px solid #ddd;
+      border-left: 1px solid @gray-1;
     }
 
     &:not(:only-child):after {
-      border-top: 1px solid #ddd;
+      border-top: 1px solid @gray-1;
     }
 
     .org-tree-node-inner {
@@ -222,7 +222,7 @@
       width: 20px;
       height: 50%;
       border-right: 0;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid @gray-1;
     }
   }
 

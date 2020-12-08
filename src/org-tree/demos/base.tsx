@@ -3,7 +3,6 @@ import { OrgTree } from 'z-react-ui';
 import { DataProps } from 'z-react-ui/lib/org-tree';
 
 const horizontal = false; // true：横向  false：纵向
-const collapsable = false; // true：可折叠 false：不可折叠
 const expandAll = true; // true: 全部展开 false：全部折叠
 
 interface BaseProps {
@@ -54,7 +53,6 @@ const Base: React.FC<BaseProps> = ({}) => {
       data={dataSource}
       activeId={value}
       horizontal={horizontal}
-      collapsable={collapsable}
       expandAll={expandAll}
       onClick={handleClick}
       onConditionClick={handleClick}
