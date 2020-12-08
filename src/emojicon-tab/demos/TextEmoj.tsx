@@ -1,6 +1,5 @@
 import React from 'react';
 import { EmojiconTab } from 'z-react-ui';
-import { EmojiconType } from 'z-react-ui/lib/emojicon-tab/defaultEmojicons';
 
 const style = {
   color: '#1890ff',
@@ -11,13 +10,13 @@ export default () => {
     <>
       <div> 底部（默认）</div>
       <EmojiconTab
-        onEmojiChange={(emoji: EmojiconType) => alert('点击了:' + emoji)}
+        onEmojiChange={(emoji: string) => alert('点击了:' + emoji)}
         emojiText={<span style={style}>表情</span>}
       />
       <div> 顶部:</div>
       <EmojiconTab
         placement="top"
-        onEmojiChange={(emoji: EmojiconType) => alert('点击了:' + emoji)}
+        onEmojiChange={(emoji: string) => alert('点击了:' + emoji)}
         emojiText={<span style={style}>表情</span>}
       />
     </>
