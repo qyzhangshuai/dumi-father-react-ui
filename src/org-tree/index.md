@@ -7,7 +7,9 @@ nav:
   path: /components
 ---
 
-# Foo 组件
+# OrgTree 组件
+
+一个基于 react 的简单组织树组件
 
 ## 基本使用
 
