@@ -44,3 +44,7 @@ EmojiconTab 表情采用标签页的方式，以及使用表情符号进行输�
 | children           | react 的 children                                                                                                                              | React.ReactNode           | -            |      |
 
 > 同时支持 antd 的 Tabs 里面的属性，如需配置则前往[Tabs 标签页](https://ant.design/components/tabs-cn)进行查看
+
+## FAQ
+
+- v1.0.6 新增 tab 表情中的表情
