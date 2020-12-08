@@ -1,6 +1,6 @@
 # z-react-ui
 
-`z-react-ui`，是一款基于 Dumi，由 React + TypeScript 开发的组件库 🎉。如果你也想学习组件开发，欢迎加入或提供意见，该项目会长期更新，你的 star ⭐，是对我最大的鼓励。
+`z-react-ui`，是一款基于 Dumi，由 React + TypeScript 开发的组件库 🎉。如果你也想学习组件开发，欢迎加入或提供意见，该项目会长期更新，欢迎你的 start⭐
 
 [组件库预览地址](https://qyzhangshuai.github.io/dumi-father-react-ui)
 

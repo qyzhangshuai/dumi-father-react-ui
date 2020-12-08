@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePrefixCls } from '../_hooks';
 
 // 判断是否叶子节点
 const isLeaf = (data: any, prop: any) => {
@@ -58,7 +59,7 @@ export const renderLabel = (data: any, prop: any) => {
   const label = data[node.label];
   const renderContent = prop.renderContent;
   const onClick = prop.onClick;
-
+  const displaceCls = usePrefixCls('inline-block');
   const childNodes = [];
   if (typeof renderContent === 'function') {
     const vnode = renderContent(data);
@@ -71,7 +72,11 @@ export const renderLabel = (data: any, prop: any) => {
     childNodes.push(renderBtn(data, prop));
   }
 
-  const cls = ['org-tree-node-label-inner', 'org-tree-node-cursor'];
+  const cls = [
+    'org-tree-node-label-inner',
+    'org-tree-node-cursor',
+    displaceCls,
+  ];
   const dls = ['org-tree-node-label-inner', 'org-tree-node-condition'];
   const {
     labelWidth,

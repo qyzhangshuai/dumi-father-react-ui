@@ -31,3 +31,7 @@ nav:
 | onClick            | 点击 label 函数                                                       | `(e: React.MouseEventHandler<HTMLElement>, data: DataProps) => void` | -                                                                 |      |
 | onConditionClick   | 点击 conditionList 时触发函数                                         | `(e: React.MouseEventHandler<HTMLElement>, data: DataProps) => void` | -                                                                 |      |
 | renderContent      | 处理 label 的数据，渲染 label 函数                                    | `(data:DataProps) => void`                                           | -                                                                 |      |
+
+## FAQ
+
+- v1.0.7 修改组织树样式
