@@ -1,4 +1,5 @@
 ---
+order: 1
 title: '关于 z-react-ui'
 nav:
   title: 开发指南

@@ -1,7 +1,8 @@
 ---
+order: 2
 title: '搭建过程'
 nav:
-  title:  开发指南
+  title: 开发指南
 ---
 
 # z-react-ui
