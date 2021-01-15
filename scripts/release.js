@@ -73,7 +73,7 @@ async function updateVersion(nextVersion) {
   timeLog('修改package.json版本号', 'start');
   await fs.writeFileSync(
     path.resolve(__dirname, './../package.json'),
-    JSON.stringify(pkg),
+    JSON.stringify(pkg, null, 2),
   );
   await run('npx prettier package.json');
   timeLog('修改package.json版本号', 'end');
