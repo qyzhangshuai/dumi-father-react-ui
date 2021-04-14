@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition';
 import { defaultPrefixCls } from '@/_utils/config';
 
-export type AnimationName = 'top' | 'left' | 'bottom' | 'right';
+export type AnimationName = 'top' | 'left' | 'bottom' | 'right' | 'center';
 export const animationPrefix = `${defaultPrefixCls}-animation`;
 
 export type TransitionProps = {

@@ -17,6 +17,7 @@ export default () => {
       <Button onClick={() => handleClick('bottom')}>从下向上</Button>
       <Button onClick={() => handleClick('left')}>从左向右</Button>
       <Button onClick={() => handleClick('right')}>从右向左</Button>
+      <Button onClick={() => handleClick('center')}>从中间向四周</Button>
 
       <Transition animation={animation} in={show} timeout={3000}>
         <div style={{ background: '#1890ff', height: 100 }}>1</div>
