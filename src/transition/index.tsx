@@ -14,7 +14,7 @@ export type TransitionProps = {
    */
   animation?: AnimationName;
   /**
-   * @description       动画类名
+   * @description       自定义动画类名,若存在则animation失效
    * @default
    */
   className?: string;
@@ -29,10 +29,12 @@ const Transition: React.FC<TransitionProps> = ({
   return (
     <CSSTransition
       // @ts-ignore
-      classNames={classNames(className, `${animationPrefix}-${animation}`)}
+      classNames={classNames(
+        className ? className : `${animationPrefix}-${animation}`,
+      )}
       {...restProps}
     >
-      {children ? children : <div />}
+      <>{children}</>
     </CSSTransition>
   );
 };
