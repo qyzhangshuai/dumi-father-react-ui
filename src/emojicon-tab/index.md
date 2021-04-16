@@ -1,7 +1,7 @@
 ---
-title: 'EmojiconTab'
+title: 'EmojiconTab 表情tab'
 group:
-  title: EmojiconTab
+  title: EmojiconTab 表情tab
 nav:
   title: 组件
   path: /components

@@ -1,7 +1,7 @@
 ---
-title: 'OrgTree'
+title: 'OrgTree 组织架构树'
 group:
-  title: OrgTree
+  title: OrgTree 组织架构树
 nav:
   title: 组件
   path: /components

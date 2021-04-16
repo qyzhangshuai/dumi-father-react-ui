@@ -1,7 +1,7 @@
 ---
-title: 'Transition'
+title: 'Transition 出现消失动画'
 group:
-  title: Transition
+  title: Transition 出现消失动画
 nav:
   title: 组件
   path: /components
@@ -19,5 +19,6 @@ nav:
 
 <code src="./demos/Base.tsx">
 
-注意：下面很多为 react-transition-group/CSSTransition 中 CSSTransition 组件的 api
 <API src="./index.tsx"></API>
+
+> 注意：API 中很多为 react-transition-group/CSSTransition 中 CSSTransition 组件的 api

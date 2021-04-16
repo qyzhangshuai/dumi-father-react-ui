@@ -9,12 +9,12 @@ export const animationPrefix = `${defaultPrefixCls}-animation`;
 
 export type TransitionProps = {
   /**
-   * @description       指定动画类型
-   * @default           "top"
+   * @description 指定动画类型
+   * @default "top"
    */
   animation?: AnimationName;
   /**
-   * @description       自定义动画类名,若存在则animation失效
+   * @description 自定义动画类名,若存在则animation失效
    * @default
    */
   className?: string;
