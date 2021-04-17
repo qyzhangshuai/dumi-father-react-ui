@@ -1,0 +1,204 @@
+@import '../../style/themes/default.less';
+
+@chat-panel: ~'@{st-prefix}-chat-panel';
+@chat-list: ~'@{st-prefix}-chat-list';
+@chat-item: ~'@{st-prefix}-chat-item';
+
+.@{chat-panel} {
+  width: 100%;
+  min-height: 260px;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+
+  //自动移滚动条样式
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1em;
+    background-color: rgba(50, 50, 50, 0.3);
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 1em;
+    background-color: rgba(50, 50, 50, 0.1);
+  }
+  /*透明滚动条*/
+  &-transparent-scroll-bar::-webkit-scrollbar {
+    color: transparent;
+  }
+  &-transparent-scroll-bar::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  &-transparent-scroll-bar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .loading-msg-panel {
+    width: 100%;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 100%;
+      user-select: none;
+      animation: loading-msg 1s linear;
+      // 动画无限循环
+      animation-iteration-count: infinite;
+    }
+  }
+
+  // 加载消息动画
+  @keyframes loading-msg {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// 聊天内容样式
+.@{chat-list}-row-list {
+  width: 100%;
+  min-height: 50px;
+  // 时间样式
+  .@{chat-list}-sender-time-list {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      padding: 3px 15px;
+      border-radius: 10px;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: #cacbd6;
+      line-height: 12px;
+      display: inline-block;
+      background: #fafafa;
+    }
+  }
+
+  // 消息样式
+  .@{chat-item} {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 5px 0;
+
+    .@{chat-item}-avatar {
+      width: 40px;
+      height: 40px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-right: 15px;
+      margin-left: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .@{chat-item}-contentbox {
+      flex: 1;
+      word-break: break-all;
+      .@{chat-item}-userName {
+        font-size: 12px;
+        height: 20px;
+        // color: @table-header-color;
+        color: #9fa0ad;
+      }
+      .@{chat-item}-content {
+        max-width: 60%;
+        padding: 10px;
+        position: relative;
+        // color: @label-color;
+        color: #44475f;
+        font-size: 12px;
+        // box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 12%),
+        //   0 6px 16px 0 rgba(0, 0, 0, 8%), 0 9px 28px 8px rgba(0, 0, 0, 5%);
+        border: 1px solid rgba(0, 0, 0, 3%);
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 0;
+          border: 6px solid transparent;
+        }
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+    &-left {
+      .@{chat-item}-contentbox {
+        .@{chat-item}-content {
+          float: left;
+          background: #f8f8fa;
+          border-radius: 10px;
+          &::before {
+            left: -3px;
+            top: 6px;
+            transform: rotate(-45deg);
+            // border-top-color: #f8f8fa;
+            border-top-color: #f8f8fa;
+            border-left-color: #f8f8fa;
+          }
+        }
+      }
+    }
+    &-right {
+      .@{chat-item}-avatar {
+        margin-right: 0;
+        margin-left: 15px;
+      }
+      .@{chat-item}-userName {
+        text-align: right;
+      }
+      .@{chat-item}-contentbox {
+        .@{chat-item}-content {
+          border-radius: 10px;
+          float: right;
+          background: #eff2ff;
+          &::before {
+            right: -3px;
+            top: 6px;
+            transform: rotate(45deg);
+            border-top-color: #eff2ff;
+            border-right-color: #eff2ff;
+          }
+        }
+      }
+    }
+
+    &-center {
+      margin: 50px 0 40px;
+      .@{chat-item}-contentbox {
+        text-align: center;
+
+        .@{chat-item}-content {
+          padding: 3px 15px;
+          border-radius: 10px;
+          font-family: PingFangSC-Regular;
+          font-size: 12px;
+          color: #cacbd6;
+          line-height: 12px;
+          display: inline-block;
+          background: #fafafa;
+        }
+      }
+    }
+  }
+}
