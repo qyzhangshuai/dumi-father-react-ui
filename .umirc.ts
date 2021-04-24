@@ -7,7 +7,7 @@ export default defineConfig({
   // logo: './src/assets/logo.png',
   base: '/dumi-father-react-ui',
   publicPath: '/dumi-father-react-ui/',
-  exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
+  // exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
   outputPath: 'docs-dist',
   mode: 'site',
   resolve: {
